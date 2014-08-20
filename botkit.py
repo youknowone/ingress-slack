@@ -1,4 +1,5 @@
 
+import config
 import json
 import requests
 import _secret
@@ -6,7 +7,7 @@ import _secret
 HOOK_URL = 'https://irk.slack.com/services/hooks/incoming-webhook?token=' + _secret.INCOMING_HOOK_TOKEN
 
 class Bot(object):
-    def __init__(self, chan='#general', username='irk-bot', emoji=':ghost:'):
+    def __init__(self, chan=config.DEFAULT_CHANNEL, username=config.DEFAULT_USERNAME, emoji=config.DEFAULT_EMOJI):
         self.payload = {'channel': chan, 'username': username, 'emoji': emoji}
 
     def send(self, *texts):

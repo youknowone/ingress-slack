@@ -1,0 +1,4 @@
+
+DEFAULT_CHANNEL = '#general'
+DEFAULT_USERNAME = 'bot'
+DEFAULT_EMOJI = ':ghost:'

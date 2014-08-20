@@ -1,0 +1,4 @@
+
+DEFAULT_CHANNEL = '#dev'
+DEFAULT_USERNAME = 'testbot'
+DEFAULT_EMOJI = ':ghost:'
