@@ -17,4 +17,4 @@ rc.set(REDIS_KEY, date)
 
 if date != last:
     bot = botkit.Bot(username='GooglePlay')
-    bot.send('Update: last update', date)
+    bot.send('[GooglePlay Update] date', date)
