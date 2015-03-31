@@ -2,19 +2,20 @@
 import config
 import json
 import requests
-import _secret
+from config import *
+from _secret import *
 
-HOOK_URL = 'https://irk.slack.com/services/hooks/incoming-webhook?token=' + _secret.INCOMING_HOOK_TOKEN
+HOOK_URL = INCOMING_HOOK_URL
 
 class Bot(object):
     """An abstract bot API wrapper for slack.
     """
-    def __init__(self, chan=config.DEFAULT_CHANNEL, username=config.DEFAULT_USERNAME, emoji=config.DEFAULT_EMOJI):
+    def __init__(self, chan=DEFAULT_CHANNEL, username=DEFAULT_USERNAME, emoji=DEFAULT_EMOJI):
         self.payload = {'channel': chan, 'username': username, 'emoji': emoji}
 
     def send(self, *texts):
         """Sends a message via incoming hook in `print` semantic of python."""
-        self.payload['text'] = ' '.join(map(str, texts))
+        self.payload['text'] = ' '.join(map(unicode, texts))
         return requests.post(HOOK_URL, data={'payload': json.dumps(self.payload)})
 
 

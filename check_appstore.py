@@ -8,7 +8,7 @@ REDIS_KEY = 'ingress-appstore-lastupdate'
 URL = 'https://itunes.apple.com/us/app/ingress/id576505181'
 
 resp = requests.get(URL)
-m = re.search('<span class="label">Updated: </span>(.*?)</li><li><span class="label">Version: </span>(.*?)</li>', resp.text)
+m = re.search('<span class="label">Updated: </span><span.*?>(.*?)</span></li><li><span class="label">Version: </span><span.*?>(.*?)</span></li>', resp.text)
 date = m.group(1)
 
 rc = redis.StrictRedis()
