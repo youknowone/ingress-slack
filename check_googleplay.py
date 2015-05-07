@@ -17,5 +17,5 @@ rc.set(REDIS_KEY, date)
 
 if date.encode('utf-8') != last:
     bot = botkit.Bot(username='GooglePlay')
-    respond = bot.send('[GooglePlay Update] date', date)
+    respond = bot.send('[GooglePlay Update] date', date, '<' + URL + '>')
     assert respond.ok
