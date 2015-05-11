@@ -18,3 +18,7 @@ rc.set(REDIS_KEY, date)
 if date != last:
     bot = botkit.Bot(username='App Store')
     bot.send('[iOS Update] date:', date, 'version:', m.group(2), '<' + URL + '>')
+else:
+    bot = botkit.Bot(username='App Store')
+    bot.send('test: ' + '<' + URL + '>')
+    
